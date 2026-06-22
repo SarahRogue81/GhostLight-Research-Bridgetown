@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<article class="<%= data.willamette&.article_classes %>">
+
+<h1><%= pipe(data.title) { strip_html | smartify | safe } %></h1>
+
+<%= yield %>
+
+</article>
+
+<hr style="margin-block-start: calc(var(--wa-content-spacing) * 2)" />
+
+<%= render Willamette::PreviousNext.new(resource:) %>

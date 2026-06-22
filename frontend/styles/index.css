@@ -1,0 +1,10 @@
+/* Import the base Web Awesome stylesheet: */
+@import "@awesome.me/webawesome/dist/styles/webawesome.css";
+@import "willamette/frontend/styles/theme.css";
+
+/** Customize Willamette theme tokens or Web Awesome tokens (or make your own!) **/
+:root {
+  /* --wll-color-brand: var(--wa-color-blue-50); */
+  /* --wll-color-brand: rgb(105, 26, 184); */
+  /* --wll-layout-padding: 2rem; */
+}

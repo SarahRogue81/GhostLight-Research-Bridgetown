@@ -1,0 +1,28 @@
+---
+layout: page
+title: Blog
+exclude_from_pagefind: true
+paginate:
+  collection: posts
+willamette:
+  post_style: headline_only
+---
+
+<ul class="layout-<%= data.willamette.display_layout %>">
+  <% paginator.each do |post| %>
+    <li>
+      <a href="<%= post.relative_url %>">
+        <%= render Willamette::PostItem.new(post:, post_style: data.willamette.post_style) %>
+      </a>
+    </li>
+  <% end %>
+  <% if paginator.resources.length < 2 %>
+    <li></li>
+  <% end %>
+</ul>
+
+<% if paginator.total_pages > 1 %>
+  <hr style="margin-block-start: calc(var(--wa-content-spacing) * 2)" />
+
+  <%= render Willamette::Pagination(paginator:) %>
+<% end %>

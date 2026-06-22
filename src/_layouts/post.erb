@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<article class="<%= data.willamette&.article_classes %>">
+
+<h1><%= pipe(data.title) { strip_html | smartify | safe } %></h1>
+
+<%
+  if data.image
+    image_path = data.image.is_a?(String) ? data.image : data.image.path
+    image_alt = data.image.is_a?(String) ? t("content.featured_post_image") : data.image.alt
+    image_caption = data.image.is_a?(String) ? nil : data.image.caption
+%>
+  <figure class="<%= data.image_bleed ? "inline-bleed" : "" %>">
+    <img src="<%= image_path %>" alt="<%= image_alt %>" />
+    <% if image_caption %>
+      <figcaption><%= markdownify image_caption %></figcaption>
+    <% end %>
+  </figure>
+<% end %>
+
+<%= yield %>
+
+<%= render Willamette::PostMetadata.new(post: resource) %>
+
+</article>
