@@ -1,0 +1,53 @@
+<% if strategy.description? %>
+  <p><%= strategy.description %></p>
+<% end %>
+
+<% if strategy.explore? %>
+  <details id="explore-menu" open>
+    <summary><h2><wa-icon class="show-small-screen" name="bars"></wa-icon>
+      <%= t "documentation.explore" %>
+    </h2></summary>
+
+    <nav>
+      <%= strategy.explore_links %>
+    </nav>
+  </details>
+<% end %>
+
+<% if strategy.follow? %>
+  <details id="follow-menu" open>
+    <summary><h2><wa-icon class="show-small-screen" name="bars"></wa-icon> <%= t "marketing.follow" %></h2></summary>
+
+    <nav>
+      <%= strategy.follow_links %>
+    </nav>
+
+    <% if strategy.subscribe? %>
+      <h2><%= t "marketing.subscribe" %></h2>
+
+      <p><strong>Get important updates</strong> sent directly to your inbox.</p>
+
+      <form action="#/subscribe-url" method="post" class="wa-stack">
+        <label class="wa-size-s"><%= t "labels.email_address" %>
+          <input id="sidebar-subscribe-email" placeholder="me@example.com" type="email" name="email"></label>
+        <label class="wa-size-s"><%= t "labels.first_name" %>
+          <input id="sidebar-subscribe-name type="text" name="metadata__first_name"></label>
+
+        <p><button type="submit" class="wa-brand wa-size-s">
+            <wa-icon name="envelope"></wa-icon>
+          <span><%= t "labels.subscribe" %></span>
+        </button></p>
+
+        <p style="opacity:0.75"><small>Free of spam, promise!<br><a href="#/archives" style="font-weight: bold" target="_blank">Visit the Archives</a></small></p>
+      </form>
+    <% end %>
+  <% end %>
+
+  <% if strategy.see_also? %>
+    <h2><%= t "marketing.see_also" %></h2>
+
+    <nav>
+      <%= strategy.see_also_links %>
+    </nav>
+  <% end %>
+</details>

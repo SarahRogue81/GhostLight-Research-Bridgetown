@@ -41,8 +41,21 @@ gem "falcon"
 # gem "nokogiri", "~> 1.18"
 
 # Or for faster parsing of HTML-only resources via Inspectors, use Nokolexbor:
-# gem "nokolexbor", "~> 0.6"
+# gem "nokolexbor", "~> 0.6"# for MongoDB integration
+# gem "mongoid", "~> 7.0"
+gem "mongo"
+
+gem "asciidoctor"
+gem "bcrypt"
+gem "dotenv"
+gem "rack-session" # Required for Rack 3 / Ruby 4+ session architectures
 
 gem "nokolexbor", "~> 0.7.0"
 
 gem "willamette", "~> 0.10.4"
+
+
+
+gem "bridgetown-seo-tag", "~> 7.0"
+
+gem "bridgetown-feed", "~> 4.0"

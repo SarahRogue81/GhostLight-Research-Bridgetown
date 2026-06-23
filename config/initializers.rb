@@ -1,3 +1,17 @@
+require "mongo"
+# require "rack/session/cookie" # Explicitly pull the cookie middleware into memory
+
+# A unified database accessor for your application
+module GhostLight
+  def self.db
+    @db ||= begin
+      uri = ENV["MONGODB_URI"] || "mongodb://127.0.0.1:27017/ghostlight_dev"
+      Mongo::Logger.logger.level = Logger::WARN
+      Mongo::Client.new(uri).database
+    end
+  end
+end
+
 # Welcome to Bridgetown!
 #
 # This configuration file is for settings which affect your whole site.
@@ -16,7 +30,7 @@
 
 Bridgetown.configure do |config|
   # The base hostname & protocol for your site, e.g. https://example.com
-  url ""
+  url "https://ghostlight-research.com"
 
   # Available options are `erb` (default), `serbea`, or `liquid`
   template_engine "erb"
@@ -26,7 +40,7 @@ Bridgetown.configure do |config|
   # See list of timezone values here:
   # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   #
-  # timezone "America/Los_Angeles"
+  timezone "America/Indiana/Indianapolis"
 
   # Add collection pagination features to your site. Documentation here:
   # https://www.bridgetownrb.com/docs/content/pagination
@@ -61,8 +75,11 @@ Bridgetown.configure do |config|
   # For example, you can use the Dotenv gem to load environment variables from
   # `.env`. Just `bundle add dotenv` and then uncomment this:
   #
-  # init :dotenv
+  init :dotenv
   #
+
+  init :"bridgetown-feed"
+  init :"bridgetown-seo-tag"
 
   # Uncomment to use Bridgetown SSR (aka dynamic rendering of content via Roda):
   #

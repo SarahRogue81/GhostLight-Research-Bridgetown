@@ -9,7 +9,7 @@ module Shared
 
       @strategy = Willamette.navbar(
         self,
-        logo: "/willamette/bridgetown-avatar.svg",
+        logo: "/images/GhostLight Research Logo.png",
         logo_alt: "Website Logo",
         search: true,
         site_title: metadata.title,
@@ -40,7 +40,8 @@ module Shared
         explore_links:,
         follow_links: [
           Willamette.link(icon: "rss", title: "Newsfeed", url: "/feed.xml"),
-          Willamette.link(icon: "bluesky", icon_family: "brands", title: "@myblue", url: "https://bsky.social"),
+          Willamette.link(icon: "bluesky", icon_family: "brands", title: "@Bluesky", url: "https://bsky.app/profile/ghostlight-research.com"),
+          Willamette.link(icon: "twitter", icon_family: "brands", title: "@Twitter", url: "https://x.com/GhostLight81"),
         ],
         subscribe: true,
         see_also_links: [
