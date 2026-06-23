@@ -82,6 +82,7 @@ class Routes::Portal < Bridgetown::Rack::Routes
             <p class="wa-text-s-muted">Secure client access to your content.</p>
           </div>
           <div class="portal-nav">
+            <a class="wa-link" href="/">Home</a>
             <a class="wa-link" href="/blog">Blog</a>
             <a class="wa-link" href="/about">About</a>
             <a class="wa-link" href="https://mastodon.social" target="_blank" rel="noreferrer noopener">Mastodon</a>
@@ -117,7 +118,7 @@ class Routes::Portal < Bridgetown::Rack::Routes
       begin
         @articles = GhostLight.db[:articles]
                       .find(portal_client_id_predicate(client_id))
-                      .sort(published_at: -1)
+                      .sort(modified: -1)
                       .to_a
       rescue => e
         @articles = []
@@ -128,8 +129,8 @@ class Routes::Portal < Bridgetown::Rack::Routes
                         "<p class=\"wa-text-s-muted\">No research documents available for your account at this time.</p>"
                       else
                         article_cards = @articles.map do |article|
-                          date_str = if article[:published_at].respond_to?(:strftime)
-                                       article[:published_at].strftime("%B %d, %Y")
+                          date_str = if article[:modified].respond_to?(:strftime)
+                                       article[:modified].strftime("%B %d, %Y")
                                      else
                                        "Recent Release"
                                      end
@@ -166,18 +167,16 @@ class Routes::Portal < Bridgetown::Rack::Routes
           ).first
 
           if article && article[:asciidoc_content]
-            published_at = article[:published_at]
-            local_published_at = if published_at.respond_to?(:getlocal)
-                                   published_at.getlocal
-                                 else
-                                   published_at
-                                 end
-            published_date = if local_published_at.respond_to?(:strftime)
-                               local_published_at.strftime("%Y-%m-%d")
-                             end
-            published_datetime = if local_published_at.respond_to?(:strftime)
-                                   local_published_at.strftime("%Y-%m-%d %H:%M:%S %z")
-                                 end
+            # Safely extract and format the modified date
+            modified = article[:modified]
+            published_date = nil
+            published_datetime = nil
+
+            if modified && (modified.respond_to?(:strftime) || modified.is_a?(Time))
+              local_modified = modified.respond_to?(:getlocal) ? modified.getlocal : modified
+              published_date = local_modified.strftime("%Y-%m-%d")
+              published_datetime = local_modified.strftime("%Y-%m-%d %H:%M:%S %z")
+            end
 
             article_html = Asciidoctor.convert(
               article[:asciidoc_content],
