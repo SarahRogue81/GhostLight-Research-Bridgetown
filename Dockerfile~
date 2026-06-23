@@ -1,0 +1,19 @@
+# Pulls the official ARM64 Ruby 4.0 slim image
+FROM ruby:4.0-slim
+
+# Install Node.js 22 and essential build tools
+RUN apt-get update && apt-get install -y \
+    curl \
+    gnupg \
+    build-essential \
+    libssl-dev \
+    libyaml-dev \
+    pkg-config \
+    && curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
+    && apt-get install -y nodejs
+
+WORKDIR /opt/src
+COPY . .
+
+RUN bundle install && npm install && bundle exec bridgetown deploy
+EXPOSE 4000

@@ -83,7 +83,7 @@ Bridgetown.configure do |config|
 
   # Uncomment to use Bridgetown SSR (aka dynamic rendering of content via Roda):
   #
-  # init :ssr
+  init :ssr
   #
   # Add `sessions: true` if you need to use session data, flash, etc.
   #
@@ -91,7 +91,7 @@ Bridgetown.configure do |config|
   # Uncomment to use file-based dynamic template routing via Roda (make sure you
   # uncomment the gem dependency in your `Gemfile` as well):
   #
-  # init :"bridgetown-routes"
+  init :"bridgetown-routes"
   #
   # NOTE: you can remove `init :ssr` if you load this initializer
   #

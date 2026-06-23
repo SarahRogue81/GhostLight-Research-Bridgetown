@@ -17,6 +17,7 @@
     "read-cache": "^1.0.0"
   },
   "dependencies": {
+    "glob": "^13.0.6",
     "willamette": "^0.10.4"
   }
 }

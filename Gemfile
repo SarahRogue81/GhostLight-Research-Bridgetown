@@ -28,7 +28,7 @@ git_source(:codeberg) { "https://codeberg.org/#{_1}.git" }
 gem "bridgetown", "~> 2.2.1"
 
 # Uncomment to add file-based dynamic routing to your project:
-# gem "bridgetown-routes", "~> 2.2.1"
+gem "bridgetown-routes", "~> 2.2.1"
 
 # The Rack-compliant web server
 # (you can optionally limit this to the "development" group)
