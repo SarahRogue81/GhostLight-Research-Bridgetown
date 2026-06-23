@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: ghostlight-portal
+    env: ruby
+    buildCommand: bundle install && npm install && bundle exec bridgetown deploy
+    startCommand: bundle exec falcon host config/falcon.rb
+    envVars:
+      - key: RACK_ENV
+        value: production
+      - key: BRIDGETOWN_ENV
+        value: production
+      - key: RUBY_VERSION
+        value: 4.0.5 # Match this to your local `ruby -v`
