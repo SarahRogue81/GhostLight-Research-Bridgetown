@@ -55,6 +55,25 @@ bin/bridgetown console
 
 You can deploy Bridgetown sites on hosts like statichost.eu and Render as well as traditional web servers by simply building and copying the output folder to your HTML root.
 
+### Render deployment
+
+Render can use `render.yaml` to keep your settings alongside the site. The app should use the port provided by Render via the `PORT` environment variable.
+
+Example `render.yaml` startup command:
+
+```yaml
+startCommand: bash -lc 'echo "Render start: PORT=${PORT:-4000}" && exec bundle exec falcon host config/falcon.rb'
+```
+
+And in `config/falcon.rb`, the service should bind to `0.0.0.0` and use:
+
+```ruby
+port = ENV["PORT"] || ENV["BRIDGETOWN_PORT"] || "4000"
+port = port.to_i
+
+Async::HTTP::Endpoint.parse("http://0.0.0.0:#{port}")
+```
+
 > Read the [Bridgetown Deployment Documentation](https://www.bridgetownrb.com/docs/deployment) for more information.
 
 ## Contributing

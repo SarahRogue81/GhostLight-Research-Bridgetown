@@ -3,7 +3,7 @@ services:
     name: ghostlight-portal
     env: ruby
     buildCommand: bundle install && npm install && bundle exec bridgetown deploy
-    startCommand: bundle exec falcon host config/falcon.rb
+    startCommand: bash -lc 'echo "Render start: PORT=${PORT:-4000}" && exec bundle exec falcon host config/falcon.rb'
     envVars:
       - key: RACK_ENV
         value: production

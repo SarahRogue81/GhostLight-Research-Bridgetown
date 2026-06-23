@@ -14,10 +14,10 @@ service "website" do
 
   rackup_path \
     File.expand_path("config.ru", Pathname.new(root).join(".."))
-  port ENV.fetch("PORT") { ENV.fetch("BRIDGETOWN_PORT", 4000) }
+  port = ENV["PORT"] || ENV["BRIDGETOWN_PORT"] || "4000"
+  port = port.to_i
 
   endpoint do
-    Async::HTTP::Endpoint
-      .parse("http://0.0.0.0", port: port)
+    Async::HTTP::Endpoint.parse("http://0.0.0.0:#{port}")
   end
 end
