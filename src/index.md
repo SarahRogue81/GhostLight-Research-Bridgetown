@@ -6,9 +6,7 @@ layout: default
 
 # Welcome to GhostLight Research
 
-Back in the day, theatre's would light a candle, at the end of the night, so that maintenance men could see to get around. This light was called a ghost light and illuminated what people could not see without it.
-
-GhostLight Research shines a ghost light on the areas you want researched so that you can clearly see what is going on with reguards to your queries.
+Let's face it, research can be hard. Not all information can be Googled or answered by AI. Sometimes I have to go to physical locations to research the information that you need to know - and I don't mind doing it either.
 
 Hi! My name is Sarah, and I'm an Independent Information Professional at GhostLight Research. Feel free to contact me via my Google Calendar schedular:
 

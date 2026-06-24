@@ -3,8 +3,6 @@ layout: page
 title: About
 ---
 
-This is the basic Bridgetown site template. You can find out more info about customizing your Bridgetown site, as well as basic Bridgetown usage documentation at [bridgetownrb.com](https://bridgetownrb.com/)
+Back in the day, theatre's would light a candle, at the end of the night, so that maintenance men could see to get around. This light was called a ghost light and illuminated what people could not see without it.
 
-You can find the source code for Bridgetown at GitHub:
-[bridgetownrb](https://github.com/bridgetownrb) /
-[bridgetown](https://github.com/bridgetownrb/bridgetown)
+GhostLight Research was created to shine a ghost light on the areas you want researched so that you can clearly see what is going on with reguards to your queries.
