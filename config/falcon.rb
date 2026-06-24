@@ -14,7 +14,7 @@ service "website" do
 
   rackup_path \
     File.expand_path("config.ru", Pathname.new(root).join(".."))
-  port = ENV["PORT"] || ENV["BRIDGETOWN_PORT"] || "4000"
+  port = ENV["PORT"] || ENV["BRIDGETOWN_PORT"] || "8080"
   port = port.to_i
 
   endpoint do

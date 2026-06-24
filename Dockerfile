@@ -24,9 +24,22 @@ COPY . .
 # Compile frontend assets via esbuild and build the static site into /output
 RUN bundle exec bridgetown deploy
 
-# --- Stage 2: Serve the production-ready site ---
-FROM nginx:alpine
-# Copy the compiled static folder from the builder stage straight to Nginx
-COPY --from=builder /app/output /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+# --- Stage 2: Run the production Falcon/Rack server ---
+FROM ruby:4.0-slim
+
+RUN apt-get update -qq && apt-get install -y libssl-dev libyaml-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+ENV BRIDGETOWN_ENV=production
+ENV RACK_ENV=production
+WORKDIR /app
+
+# Copy installed gems from builder so we don't re-bundle
+COPY --from=builder /usr/local/bundle /usr/local/bundle
+
+# Copy the full application (source + built output)
+COPY --from=builder /app /app
+
+EXPOSE 8080
+
+CMD ["bundle", "exec", "falcon", "host", "config/falcon.rb"]
