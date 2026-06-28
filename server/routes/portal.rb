@@ -183,7 +183,7 @@ class Routes::Portal < Bridgetown::Rack::Routes
               header_footer: true,
               safe: :safe,
               standalone: true,
-              attributes: published_date ? { "revdate" => published_date, "docdatetime" => published_datetime } : {}
+              attributes: published_date ? { "revdate" => "", "docdatetime" => published_datetime } : {}
             )
 
             if article_html.match?(%r{<\s*html\b}i)
