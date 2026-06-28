@@ -252,6 +252,11 @@ class Routes::Portal < Bridgetown::Rack::Routes
         bcrypt_password = BCrypt::Password.new(client[:password_digest])
         
         if bcrypt_password == r.params["password"]
+          if client[:archived]
+            r.redirect "/portal/logout"
+            r.halt
+          end
+
           if session
             session[:client_id] = client[:client_id]
             r.redirect "/portal"
