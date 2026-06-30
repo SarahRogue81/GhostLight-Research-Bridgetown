@@ -42,6 +42,11 @@ Bridgetown.configure do |config|
   #
   timezone "America/Indiana/Indianapolis"
 
+  # The locale used for the `lang` attribute on the `<html>` tag, among
+  # other things. See: https://www.bridgetownrb.com/docs/configuration/options
+  default_locale "en-GB"
+  available_locales ["en-GB"]
+
   # Add collection pagination features to your site. Documentation here:
   # https://www.bridgetownrb.com/docs/content/pagination
   #

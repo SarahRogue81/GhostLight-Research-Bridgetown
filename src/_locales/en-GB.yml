@@ -1,0 +1,50 @@
+# British English overrides (e.g. day-before-month date ordering).
+# Falls back to bridgetown-core's bundled en.yml for anything not listed here.
+en-GB:
+  content:
+    featured_post_image: featured post image
+    skip_to_content: Skip to content
+    posts:
+      more_posts: More Posts
+      newer_posts: Newer Posts
+  labels:
+    close: Close
+    email_address: Email Address
+    first_name: First Name (Optional)
+    next: Next
+    previous: Previous
+    search: Search
+    subscribe: Subscribe
+  documentation:
+    contents: Contents
+    explore: Explore
+  marketing:
+    follow: Follow Us
+    subscribe: Subscribe
+    see_also: See Also
+  nav:
+    blog: Blog
+    about: About
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      short: "%d %b"
+      long: "%d %B %Y"
+
+    day_names: [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
+    abbr_day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
+
+    month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
+    abbr_month_names: [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+    order:
+      - day
+      - month
+      - year
+
+  time:
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      short: "%d %b %H:%M"
+      long: "%d %B %Y %H:%M"
+    am: "am"
+    pm: "pm"
