@@ -31,3 +31,6 @@ class AsciidocFrontMatterLoader < Bridgetown::FrontMatter::Loaders::Base
     )
   end
 end
+
+# This fires immediately when Bridgetown autoloads the file.
+AsciidocFrontMatterLoader.register!
