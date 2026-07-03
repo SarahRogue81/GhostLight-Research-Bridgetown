@@ -178,12 +178,15 @@ class Routes::Portal < Bridgetown::Rack::Routes
               published_datetime = local_modified.strftime("%Y-%m-%d %H:%M:%S %z")
             end
 
+            attributes = { "imagesdir" => "/portal/images" }
+            attributes.merge!("revdate" => "", "docdatetime" => published_datetime) if published_date
+
             article_html = Asciidoctor.convert(
               article[:asciidoc_content],
               header_footer: true,
               safe: :safe,
               standalone: true,
-              attributes: published_date ? { "revdate" => "", "docdatetime" => published_datetime } : {}
+              attributes: attributes
             )
 
             if article_html.match?(%r{<\s*html\b}i)
@@ -212,6 +215,25 @@ class Routes::Portal < Bridgetown::Rack::Routes
           end
         rescue => e
           r.redirect "/portal?error=compilation_failed"
+        end
+      end
+    end
+
+    # 3B. ARTICLE IMAGE SERVING
+    # GET /portal/images/:filename
+    r.is "portal/images", String do |filename|
+      r.get do
+        client_id = r.env['rack.session'][:client_id]
+
+        image = GhostLight.db[:images].find(
+          portal_client_id_predicate(client_id).merge(filename: filename)
+        ).first
+
+        if image && image[:data]
+          mime_type = image[:"mime-type"] || "application/octet-stream"
+          r.halt [200, { "Content-Type" => mime_type }, [image[:data].data]]
+        else
+          r.halt [404, { "Content-Type" => "text/plain" }, ["Image not found"]]
         end
       end
     end
