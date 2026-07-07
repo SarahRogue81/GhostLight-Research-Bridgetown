@@ -5,9 +5,9 @@ class AsciidocFrontMatterLoader < Bridgetown::FrontMatter::Loaders::Base
     Bridgetown::FrontMatter::Loaders.register(self)
   end
 
-  # Tell Bridgetown to intercept .adoc files before standard parsing
+  # Tell Bridgetown to intercept .adoc and .asciidoc files before standard parsing
   def self.header?(file)
-    File.extname(file) == ".adoc"
+    File.extname(file) =~ /^\.(adoc|asciidoc)$/i
   end
 
   def read(file_contents, file_path: "")
@@ -18,10 +18,11 @@ class AsciidocFrontMatterLoader < Bridgetown::FrontMatter::Loaders::Base
     
     # Map native AsciiDoc attributes into Bridgetown's data structure
     front_matter = {
-      "title"  => doc.doctitle,
-      "date"   => doc.attributes["date"],
-      "author" => doc.attributes["author"],
-      "layout" => doc.attributes["layout"] || "post"
+      "title"      => doc.doctitle,
+      "date"       => doc.attributes["date"],
+      "author"     => doc.attributes["author"],
+      "categories" => doc.attributes["categories"],
+      "layout"     => doc.attributes["layout"] || "post"
     }.compact
 
     Bridgetown::FrontMatter::Loaders::Result.new(
