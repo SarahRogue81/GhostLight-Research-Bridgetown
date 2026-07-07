@@ -3,7 +3,7 @@ FROM ruby:4.0-slim AS builder
 
 # Install system dependencies, build tools, and Node.js for asset bundling
 RUN apt-get update -qq && apt-get install -y build-essential curl git \
-    && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
     && apt-get install -y nodejs gnupg libssl-dev libyaml-dev pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
