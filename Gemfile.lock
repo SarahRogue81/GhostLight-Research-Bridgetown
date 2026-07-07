@@ -40,19 +40,19 @@ GEM
     base64 (0.3.0)
     bcrypt (3.1.22)
     bigdecimal (4.1.2)
-    bridgetown (2.2.1)
-      bridgetown-builder (= 2.2.1)
-      bridgetown-core (= 2.2.1)
-      bridgetown-foundation (= 2.2.1)
-      bridgetown-paginate (= 2.2.1)
-    bridgetown-builder (2.2.1)
-      bridgetown-core (= 2.2.1)
-    bridgetown-core (2.2.1)
+    bridgetown (2.2.2)
+      bridgetown-builder (= 2.2.2)
+      bridgetown-core (= 2.2.2)
+      bridgetown-foundation (= 2.2.2)
+      bridgetown-paginate (= 2.2.2)
+    bridgetown-builder (2.2.2)
+      bridgetown-core (= 2.2.2)
+    bridgetown-core (2.2.2)
       addressable (~> 2.4)
       amazing_print (~> 1.2)
       base64 (>= 0.3)
       bigdecimal (>= 3.2)
-      bridgetown-foundation (= 2.2.1)
+      bridgetown-foundation (= 2.2.2)
       csv (~> 3.2)
       erubi (~> 1.9)
       faraday (~> 2.0)
@@ -78,15 +78,15 @@ GEM
       zeitwerk (>= 2.7.3)
     bridgetown-feed (4.0.0)
       bridgetown (>= 1.2.0)
-    bridgetown-foundation (2.2.1)
+    bridgetown-foundation (2.2.2)
       dry-inflector (>= 1.0)
       hash_with_dot_access (~> 2.0)
       inclusive (~> 1.0)
       zeitwerk (~> 2.5)
-    bridgetown-paginate (2.2.1)
-      bridgetown-core (= 2.2.1)
-    bridgetown-routes (2.2.1)
-      bridgetown-core (= 2.2.1)
+    bridgetown-paginate (2.2.2)
+      bridgetown-core (= 2.2.2)
+    bridgetown-routes (2.2.2)
+      bridgetown-core (= 2.2.2)
       roda-route_list (>= 2.1)
     bridgetown-seo-tag (7.0.1)
       bridgetown (>= 1.3)
@@ -257,9 +257,9 @@ PLATFORMS
 DEPENDENCIES
   asciidoctor
   bcrypt
-  bridgetown (~> 2.2.1)
+  bridgetown (~> 2.2.2)
   bridgetown-feed (~> 4.0)
-  bridgetown-routes (~> 2.2.1)
+  bridgetown-routes (~> 2.2.2)
   bridgetown-seo-tag (~> 7.0)
   dotenv
   falcon
@@ -283,13 +283,13 @@ CHECKSUMS
   base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
   bcrypt (3.1.22) sha256=1f0072e88c2d705d94aff7f2c5cb02eb3f1ec4b8368671e19112527489f29032
   bigdecimal (4.1.2) sha256=53d217666027eab4280346fba98e7d5b66baaae1b9c3c1c0ffe89d48188a3fbd
-  bridgetown (2.2.1) sha256=b47942fedef55528799ddeb350bd66e369505cae74d5779536c7638be71f69ed
-  bridgetown-builder (2.2.1) sha256=72af89059a75adcd55fb246f1414bf22ded6d498677f5ea06a8b218b7fba5f1b
-  bridgetown-core (2.2.1) sha256=2db48a912f5f7eeedebde7376d6b57209aa2d2cbb5408a13ce2f9f1488fe1dbf
+  bridgetown (2.2.2) sha256=3240782f693c34087ee387cfb5d11036a4ddd4c9bfbfc090e6122d51f50e8a1f
+  bridgetown-builder (2.2.2) sha256=dd07b3d3da84888e34747fefaf3869e7c23689ac5ace33c1ec17e145007b41ae
+  bridgetown-core (2.2.2) sha256=0997587871c7e06a979fd7530fc93f852eededb25cb6ee117e5107acda49ff7d
   bridgetown-feed (4.0.0) sha256=bd41d17f34a8bbaac8db66fe89a91b3959e797a24551ab695e899a89994ae6bb
-  bridgetown-foundation (2.2.1) sha256=f6674833fb8dad316ac5a802ce4f6de8b6f1c454cb8daf98e84e7597f14d44de
-  bridgetown-paginate (2.2.1) sha256=7be66b9e3b6070afc46b0c3e4b9502678c7d08bddf0ea616c620db09ab0e54e8
-  bridgetown-routes (2.2.1) sha256=b81c98f8aebed4692f1c365ff2c060055edb61e7ec8d5d738bc51b5fefa3edd6
+  bridgetown-foundation (2.2.2) sha256=7275e87f4d36a09e51bb7c9f7d3b92eac4539b606fb722975edcb4853074df65
+  bridgetown-paginate (2.2.2) sha256=0aa8dffa779b5f53db4a9d7e36c27d7cf2d7c0f9845a1ee2c004296814e8f4fb
+  bridgetown-routes (2.2.2) sha256=e966bf06cffc147da3f122ab417b27a29b6e8c5e1da374c634b43dbe4025b26e
   bridgetown-seo-tag (7.0.1) sha256=bc876c646822c392ce14123d111bdc2a62f05f5a14fa86c3d42e269900b02e5b
   bson (5.2.0) sha256=c468c1e8a3cfa1e80531cc519a890f85586986721d8e305f83465cc36bb82608
   bundler (4.0.14) sha256=d09a0a965cf772266a7e49e83610be7c2f4e49e61134c42a56804bb383cc24b8
