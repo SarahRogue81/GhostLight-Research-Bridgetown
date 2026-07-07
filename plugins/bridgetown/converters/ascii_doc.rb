@@ -22,7 +22,8 @@ class Bridgetown::Converters::AsciiDoc < Bridgetown::Converter
       attributes: {
         "icons" => "font",
         "sectanchors" => true,
-        "source-highlighter" => "rouge" # Integrates with Bridgetown's default highlighters
+        "source-highlighter" => "rouge", # Integrates with Bridgetown's default highlighters
+        "imagesdir" => "/images@" # trailing @ makes this a soft default, overridable by an in-document :imagesdir:
       }
     }
 
