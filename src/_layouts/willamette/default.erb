@@ -19,6 +19,8 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+
+    <%= "<style>div.paragraph { padding-bottom: 1rem; }</style>".html_safe %>
   </head>
   <body class="<%=
     class_map("wll-grid-lines": site.config.willamette.layout.grid_lines, "wll-code-dark": site.config.willamette.layout.code_dark)
