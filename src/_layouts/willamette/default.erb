@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="<%= site.locale %>" class="wa-palette-default">
+  <head>
+    <%= render "head", metadata: site.metadata, title: data.title %>
+
+    <!-- Standard Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Android/Microsoft Manifests and Tiles -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body class="<%=
+    class_map("wll-grid-lines": site.config.willamette.layout.grid_lines, "wll-code-dark": site.config.willamette.layout.code_dark)
+  %> <%= data.layout %> <%= data.page_class %>">
+    <%= dsd do %>
+      <%= render Willamette::HolyGrailLayout.new %>
+    <% end %>
+    <%= render Shared::Navbar.new(metadata: site.metadata, resource:) %>
+
+    <main slot="content" id="content">
+      <div hidden class="show-mid-screen">
+        <button type="button" class="wa-outlined wa-size-s" onclick="document.body.classList.toggle('sidebar-end-open')"><wa-icon name="list"></wa-icon></button>
+      </div>
+
+      <main-contents<%= ' data-pagefind-body' unless data.exclude_from_pagefind %>>
+        <%= yield %>
+      </main-contents>
+
+      <wll-back-to-top>
+        <button><wa-icon name="circle-chevron-up"></wa-icon></button>
+      </wll-back-to-top>
+    </main>
+
+    <aside slot="sidebar-start"<%= ' hidden' if data.willamette&.hide_sidebar %>>
+      <%= render Shared::Sidebar.new(metadata: site.metadata, resource:) unless data.willamette&.hide_sidebar %>
+    </aside>
+
+    <aside slot="sidebar-end" hidden>
+      <div class="show-mid-screen">
+        <button type="button" class="wa-outlined wa-size-s" onclick="document.body.classList.toggle('sidebar-end-open')"><wa-icon name="close"></wa-icon></button>
+      </div>
+      <h2><%= t "documentation.contents" %></h2>
+
+      <%= slotted :toc %>
+
+      <!-- TOC insertion -->
+    </aside>
+
+    <%= render "footer", metadata: site.metadata %>
+    <a slot="skip-to-content" class="skip-to-content-link" href="#content"><%= t "content.skip_to_content" %></a>
+    <%= render Willamette::SearchDialog.new %>
+  </body>
+</html>
