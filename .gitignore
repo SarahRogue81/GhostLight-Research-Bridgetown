@@ -1,5 +1,6 @@
 # Bridgetown
 output
+docs
 .bridgetown-cache
 .bridgetown-metadata
 .routes.json
