@@ -52,7 +52,7 @@ gem "rack-session" # Required for Rack 3 / Ruby 4+ session architectures
 
 gem "nokolexbor", "~> 0.7.0"
 
-gem "willamette", "~> 0.10.4"
+gem "willamette", "~> 0.10.5"
 
 
 

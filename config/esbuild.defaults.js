@@ -23,6 +23,7 @@ import { pathToFileURL, fileURLToPath } from "node:url"
 import postcss from "postcss"
 import postCssImport from "postcss-import"
 import readCache from "read-cache"
+import { globSync } from "glob"
 
 // Detect if an NPM package is available
 const moduleAvailable = name => {
@@ -71,7 +72,7 @@ const importGlobPlugin = (options, bridgetownConfig) => ({
     })
 
     build.onLoad({ filter: /.*/, namespace: "import-glob" }, async (args) => {
-      const files = fsLib.globSync(args.pluginData.path, {
+      const files = globSync(args.pluginData.path, {
         cwd: args.pluginData.resolveDir,
       })
         .filter(module => options.excludeFilter ? !options.excludeFilter.test(module) : true)
@@ -316,7 +317,7 @@ export default async (esbuildOptions, ...args) => {
   const entryPoints = esbuildOptions.entryPoints || ["./frontend/javascript/index.js"]
   if (esbuildOptions.entryPoints) delete esbuildOptions.entryPoints
 
-  const islands = fsLib.globSync(`./${bridgetownConfig.source}/${bridgetownConfig.islandsDir}/*.{js,js.rb}`).map(item => `./${item}`)
+  const islands = globSync(`./${bridgetownConfig.source}/${bridgetownConfig.islandsDir}/*.{js,js.rb}`).map(item => `./${item}`)
   const islandsAsObject = islands.reduce((obj, str) => obj[str] = str, {})
 
   esbuild.context({

@@ -237,8 +237,8 @@ GEM
     traces (0.18.2)
     tsort (0.2.0)
     uri (1.1.1)
-    willamette (0.10.4)
-      bridgetown (>= 2.1, < 3.0)
+    willamette (0.10.5)
+      bridgetown (>= 2.2, < 3.0)
       nokolexbor (>= 0.6)
     zeitwerk (2.8.2)
 
@@ -266,7 +266,7 @@ DEPENDENCIES
   mongo
   nokolexbor (~> 0.7.0)
   rack-session
-  willamette (~> 0.10.4)
+  willamette (~> 0.10.5)
 
 CHECKSUMS
   addressable (2.9.0) sha256=7fdf6ac3660f7f4e867a0838be3f6cf722ace541dd97767fa42bc6cfa980c7af
@@ -378,7 +378,7 @@ CHECKSUMS
   traces (0.18.2) sha256=80f1649cb4daace1d7174b81f3b3b7427af0b93047759ba349960cb8f315e214
   tsort (0.2.0) sha256=9650a793f6859a43b6641671278f79cfead60ac714148aabe4e3f0060480089f
   uri (1.1.1) sha256=379fa58d27ffb1387eaada68c749d1426738bd0f654d812fcc07e7568f5c57c6
-  willamette (0.10.4) sha256=e466f52a857ab4a6173aa94c6bf64cdf73bd738b588fbac6a40fa7f4b4b7fd63
+  willamette (0.10.5)
   zeitwerk (2.8.2) sha256=7212a61311083c604184b1ea2574b9aa05cd14f855a0841c06985cabe9181d12
 
 BUNDLED WITH
