@@ -9,9 +9,10 @@ tagline: Shining a ghost light onto your research projects
 description: >-
   GhostLight Research is dedicated to exploring the unknown and bringing light to hidden knowledge. I am Sarah, an Independent Information Professional with a passion for uncovering the mysteries of the world.
 email: sarah@ghostlight-research.com
-author: SarahRogue81
+author:
+  name: Sarah Rogue
+  twitter: SarahRogue81
 mastodon: "@GhostLight_Research"
 twitter:
-  author: SarahRogue81
   username: GhostLight81
   card: summary
