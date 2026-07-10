@@ -31,6 +31,9 @@ end
 Bridgetown.configure do |config|
   # The base hostname & protocol for your site, e.g. https://example.com
   url "https://ghostlight-research.com"
+  config.url "https://ghostlight-research.com"
+
+  init :"bridgetown-sitemap"
 
   # Available options are `erb` (default), `serbea`, or `liquid`
   template_engine "erb"

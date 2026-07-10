@@ -59,3 +59,5 @@ gem "willamette", "~> 0.10.5"
 gem "bridgetown-seo-tag", "~> 7.0"
 
 gem "bridgetown-feed", "~> 4.0"
+
+gem "bridgetown-sitemap", "~> 3.0"
