@@ -34,6 +34,7 @@ Bridgetown.configure do |config|
   config.url "https://ghostlight-research.com"
 
   init :"bridgetown-sitemap"
+  init :"bridgetown-seo-tag"
 
   # Available options are `erb` (default), `serbea`, or `liquid`
   template_engine "erb"
@@ -47,8 +48,8 @@ Bridgetown.configure do |config|
 
   # The locale used for the `lang` attribute on the `<html>` tag, among
   # other things. See: https://www.bridgetownrb.com/docs/configuration/options
-  default_locale "en-GB"
-  available_locales ["en-GB"]
+  default_locale :"en-GB"
+  available_locales [:"en-GB"]
 
   # Add collection pagination features to your site. Documentation here:
   # https://www.bridgetownrb.com/docs/content/pagination
@@ -134,5 +135,5 @@ Bridgetown.configure do |config|
     enabled true
   end
 
-  init :"willamette" 
+  init :"willamette"
 end

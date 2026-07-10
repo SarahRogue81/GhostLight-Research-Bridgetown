@@ -16,7 +16,7 @@ module Shared
         nav_links: [
           Willamette.link(title: t("nav.blog"), url: "/blog"),
           Willamette.link(title: t("nav.about"), url: "/about"),
-          Willamette.link(icon: "mastodon", icon_family: "brands", icon_label: "Mastodon", title: nil, url: "https://mastodon.social"),
+          Willamette.link(icon: "mastodon", icon_family: "brands", icon_label: "Mastodon", title: nil, url: "https://mastodon.social/#{metadata.mastodon}"),
         ]
       )
     end

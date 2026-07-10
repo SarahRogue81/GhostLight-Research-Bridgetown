@@ -5,7 +5,13 @@
 # in the templates via {{ site.metadata.myvariable }}.
 
 title: GhostLight Research
-# tagline: This site is totally awesome
-email: sarah@ghostlight-research.com
+tagline: Shining a ghost light onto your research projects
 description: >-
   GhostLight Research is dedicated to exploring the unknown and bringing light to hidden knowledge. I am Sarah, an Independent Information Professional with a passion for uncovering the mysteries of the world.
+email: sarah@ghostlight-research.com
+author: SarahRogue81
+mastodon: "@GhostLight_Research"
+twitter:
+  author: SarahRogue81
+  username: GhostLight81
+  card: summary
