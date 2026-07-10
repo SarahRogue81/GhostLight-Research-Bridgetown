@@ -60,7 +60,7 @@ class Routes::Portal < Bridgetown::Rack::Routes
         <script src="#{js_path}" defer></script>
         <style>
           body.page { min-height: 100vh; margin: 0; background: var(--wa-color-surface, #f7fafc); color: var(--wa-color-text-normal, #1f2937); }
-          .portal-header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.25rem 1.5rem; max-width: 1200px; margin: 0 auto; background: var(--wa-color-surface-default, #ffffff); border-bottom: 1px solid var(--wa-color-surface-border, rgba(15,23,42,0.08)); }
+          .portal-header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.25rem 1.5rem; max-width: 1200px; margin: 0 auto; background: var(--wa-color-surface, #f7fafc); border-bottom: 1px solid var(--wa-color-surface-border, rgba(15,23,42,0.08)); }
           .portal-header h1 { margin: 0; font-size: clamp(1.5rem, 2vw, 2.25rem); color: var(--wa-color-text-normal, #1f2937); }
           .portal-nav { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
           .portal-nav a { color: var(--wa-color-text-link, #0369a1); }
@@ -85,7 +85,7 @@ class Routes::Portal < Bridgetown::Rack::Routes
             <a class="wa-link" href="/">Home</a>
             <a class="wa-link" href="/blog">Blog</a>
             <a class="wa-link" href="/about">About</a>
-            <a class="wa-link" href="https://mastodon.social" target="_blank" rel="noreferrer noopener">Mastodon</a>
+            <a class="wa-link" href="https://mastodon.social/@GhostLight_Research" target="_blank" rel="noreferrer noopener"><wa-icon name="mastodon" family="brands" label="Mastodon"></wa-icon></a>
             #{logout_button}
           </div>
         </header>
