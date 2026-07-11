@@ -19,12 +19,15 @@ class AsciidocFrontMatterLoader < Bridgetown::FrontMatter::Loaders::Base
     # Map native AsciiDoc attributes into Bridgetown's data structure
     front_matter = {
       "title"                    => doc.doctitle,
-      "date"                     => doc.attributes["date"],
+      "description"              => doc.attributes["description"],
+      "image"                    => doc.attributes["image"],
       "author"                   => doc.attributes["author"],
+      "lang"                     => doc.attributes["lang"],
       "categories"               => doc.attributes["categories"],
+      "date"                     => doc.attributes["date"],
       "layout"                   => doc.attributes["layout"] || "post",
-      "sitemap_priority"         => doc.attributes["sitemap_priority"],
-      "sitemap_change_frequency" => doc.attributes["sitemap_change_frequency"]
+      "sitemap_change_frequency" => doc.attributes["sitemap_change_frequency"],
+      "sitemap_priority"         => doc.attributes["sitemap_priority"]
     }.compact
 
     Bridgetown::FrontMatter::Loaders::Result.new(
