@@ -33,8 +33,9 @@ Bridgetown.configure do |config|
   url "https://ghostlight-research.com"
   config.url "https://ghostlight-research.com"
 
-  init :"bridgetown-sitemap"
+  init :"bridgetown-feed"
   init :"bridgetown-seo-tag"
+  init :"bridgetown-sitemap"
 
   # Available options are `erb` (default), `serbea`, or `liquid`
   template_engine "erb"
@@ -86,9 +87,6 @@ Bridgetown.configure do |config|
   #
   init :dotenv
   #
-
-  init :"bridgetown-feed"
-  init :"bridgetown-seo-tag"
 
   # Uncomment to use Bridgetown SSR (aka dynamic rendering of content via Roda):
   #
