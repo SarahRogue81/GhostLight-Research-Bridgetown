@@ -40,8 +40,8 @@ module Shared
         explore_links:,
         follow_links: [
           Willamette.link(icon: "rss", title: "Newsfeed", url: "/feed.xml"),
-          Willamette.link(icon: "bluesky", icon_family: "brands", title: "@Bluesky", url: "https://bsky.app/profile/ghostlight-research.com"),
-          Willamette.link(icon: "twitter", icon_family: "brands", title: "@Twitter", url: "https://x.com/GhostLight81"),
+          Willamette.link(icon: "bluesky", icon_family: "brands", title: "@Bluesky", url: "https://bsky.app/profile/#{metadata.bluesky}"),
+          Willamette.link(icon: "twitter", icon_family: "brands", title: "@Twitter", url: "https://x.com/#{metadata.twitter.username}"),
         ],
         subscribe: true,
         see_also_links: [
